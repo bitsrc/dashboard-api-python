@@ -42,14 +42,20 @@
 ## [Clients](https://dashboard.meraki.com/api_docs#clients)
 
 - Return the client associated with the given identifier.
+  - getclient
 - Provisions a client with a name and policy.
 - Return the client's daily usage history.
 - Return the policy assigned to a client on the network.
+  - getclientpolicy
 - Update the policy assigned to a client on the network.
+  - updateclientpolicy
 - Return the splash authorization for a client, for each SSID they've associated with through splash.
-- Update a client's splash authorization. 
+  - getclientsplash
+- Update a client's splash authorization.
+  - updateclientsplash
 - List the clients that have used this network in the timespan
 - List the clients of a device, up to a maximum of a month ago.
+  - getclients
 - Return the client's network traffic data over time.
 - Return the events associated with this client.
 - Return the latency history for a client.
@@ -57,7 +63,9 @@
 ## [Config templates](https://dashboard.meraki.com/api_docs#config-templates)
 
 - List the configuration templates for this organization
+  - gettemplates
 - Remove a configuration template
+  - deltemplate
   
 ## [Content filtering categories](https://dashboard.meraki.com/api_docs#content-filtering-categories)
 
@@ -71,14 +79,22 @@
 ## [Devices](https://dashboard.meraki.com/api_docs#devices)
 
 - List LLDP and CDP information for a device
+  - getlldpcdp
 - List the devices in an organization
 - List the devices in a network
+  - getnetworkdevices
 - Return a single device
+  - getdevicedetail
 - Return the performance score for a single device.
+  - getmxperf
 - Return the uplink information for a device.
+  - getdeviceuplink
 - Update the attributes of a device
+  - updatedevice
 - Claim a device into a network
+  - adddevtonet
 - Remove a single device
+  - removedevfromnet
 - Get the uplink loss percentage and latency in milliseconds for a wired network device.
 - Reboot a device
 - Blink the LEDs on a device
@@ -92,6 +108,7 @@
 ## [Group policies](https://dashboard.meraki.com/api_docs#group-policies)
 
 - List the group policies in a network
+  - getgrouppolicies
 - Create a group policy
 - Display a group policy
 - Update a group policy
@@ -117,7 +134,9 @@
 ## [MR L3 firewall](https://dashboard.meraki.com/api_docs#mr-l3-firewall)
 
 - Return the L3 firewall rules for an SSID on an MR network
+  - getssidl3fwrules
 - Update the L3 firewall rules of an SSID on an MR network
+  - updatessidl3fwrules
   
 ## [MV Sense](https://dashboard.meraki.com/api_docs#mv-sense)
 
@@ -140,7 +159,9 @@
 ## [MX L3 firewall](https://dashboard.meraki.com/api_docs#mx-l3-firewall)
 
 - Return the L3 firewall rules for an MX network
+  - getmxl3fwrules
 - Update the L3 firewall rules of an MX network
+  - updatemxl3fwrules
   
 ## [MX L7 application categories](https://dashboard.meraki.com/api_docs#mx-l7-application-categories)
 
@@ -154,12 +175,16 @@
 ## [MX VPN firewall](https://dashboard.meraki.com/api_docs#mx-vpn-firewall)
 
 - Return the firewall rules for an organization's site-to-site VPN
+  - getmxvpnfwrules
 - Update the firewall rules of an organization's site-to-site VPN
+  - updatemxvpnfwrules
   
 ## [MX cellular firewall](https://dashboard.meraki.com/api_docs#mx-cellular-firewall)
 
 - Return the cellular firewall rules for an MX network
+  - getmxcellularfwrules
 - Update the cellular firewall rules of an MX network
+  - updatemxcellularfwrules
   
 ## [MX port forwarding rules](https://dashboard.meraki.com/api_docs#mx-port-forwarding-rules)
 
@@ -197,21 +222,35 @@
 ## [Networks](https://dashboard.meraki.com/api_docs#networks)
 
 - Return the Bluetooth settings for a network.
+  - getbluetooth
 - Update the Bluetooth settings for a network.
+  - updatebluetooth
 - List the networks in an organization
+  - getnetworklist
 - Return a network
+  - getnetworkdetail
 - Update a network
+  - updatenetwork
 - Create a network
+  - addnetwork
 - Delete a network
+  - delnetwork
 - Bind a network to a template.
+  - bindtotemplate
 - Unbind a network from a template.
+  - unbindfromtemplate
 - The traffic analysis data for this network.
+  - getnetworktrafficstats
 - List the access policies for this network.
+  - getaccesspolicies
 - List Air Marshal scan results from a network
+  - getairmarshal
 - Combine multiple networks into a single network
 - Split a combined network into individual networks for each type of device
 - Return the site-to-site VPN settings of a network.
+  - getvpnsettings
 - Update the site-to-site VPN settings of a network.
+  - updatevpnsettings
   
 ## [OpenAPI Spec](https://dashboard.meraki.com/api_docs#openapi-spec)
 
@@ -220,19 +259,31 @@
 ## [Organizations](https://dashboard.meraki.com/api_docs#organizations)
 
 - List the organizations that the user has privileges on
+  - myorgaccess
 - Return an organization
+  - getorg
 - Update an organization
+  - renameorg
 - Create a new organization
+  - addorg
 - Create a new organization by cloning the addressed organization
+  - cloneorg
 - Return the license state for an organization
+  - getlicensestate
 - Return the inventory for an organization
+  - getorginventory
 - List the status of every Meraki device in the organization
+  - get_device_statuses
 - Delete an organization
 - Claim a device, license key, or order into an organization.
+  - claim
 - Return the uplink loss and latency for every MX in the organization from at latest 2 minutes ago
 - Return the third party VPN peers for an organization
+  - getnonmerakivpnpeers
 - Update the third party VPN peers for an organization
-  
+  - updatenonmerakivpn
+  - appendnonmerakivpn
+
 ## [PII](https://dashboard.meraki.com/api_docs#pii)
 
 - List the keys required to access Personally Identifiable Information (PII) for a given identifier.
@@ -252,10 +303,15 @@
 ## [SAML roles](https://dashboard.meraki.com/api_docs#saml-roles)
 
 - List the SAML roles for this organization
+  - getsamlroles
 - Return a SAML role
+  - getsamlroledetail
 - Update a SAML role
+  - updatesamlrole
 - Create a SAML role
+  - addsamlrole
 - Remove a SAML role
+  - delsamlrole
   
 ## [SM](https://dashboard.meraki.com/api_docs#sm)
 
@@ -278,6 +334,7 @@
 - Return historical records of commands sent to Systems Manager devices.
 - Returns historical connectivity data (whether a device is regularly checking in to Dashboard).
 - List the devices enrolled in an SM network with various specified fields and filters
+  - getsmdevices
 - List the owners in an SM network with various specified fields and filters
 - Get the profiles associated with a user
 - Get the profiles associated with a device
@@ -289,11 +346,17 @@
 - List the restrictions on a device
 - List the certs on a device
 - Add, delete, or update the tags of a set of devices
+  - updatesmtags
 - Modify the fields of a device
+  - updatesmfields
 - Lock a set of devices
+  - lockdevices
 - Wipe a device
+  - wipedevices
 - Force check-in a set of devices
+  - checkindevices
 - Move a set of devices to a new network
+  - movedevices
 - Unenroll a device
 - Bypass activation lock attempt
 - Bypass activation lock attempt status
@@ -305,13 +368,18 @@
 - Return the SNMP settings for a network
 - Update the SNMP settings for a network
 - Return the SNMP settings for an organization
+  - getsnmpsettings
 - Update the SNMP settings for an organization
+  - updatesnmpsettings
   
 ## [SSIDs](https://dashboard.meraki.com/api_docs#ssids)
 
 - List the SSIDs in a network. Supports networks with access points or wireless-enabled security appliances and teleworker gateways.
 - Return a single SSID
+  - getssiddetail
 - Update the attributes of an SSID
+  - updatessid
+  - updatessidobject
   
 ## [Security events](https://dashboard.meraki.com/api_docs#security-events)
 
@@ -331,10 +399,15 @@
 ## [Static routes](https://dashboard.meraki.com/api_docs#static-routes)
 
 - List the static routes for this network
+  - getstaticroutes
 - Return a static route
+  - getstaticroutedetail
 - Update a static route
+  - updatestaticroute
 - Add a static route
+  - addstaticroute
 - Delete a static route from a network
+  - delstaticroute
   
 ## [Switch port schedules](https://dashboard.meraki.com/api_docs#switch-port-schedules)
 
@@ -343,8 +416,11 @@
 ## [Switch ports](https://dashboard.meraki.com/api_docs#switch-ports)
 
 - List the switch ports for a switch
+  - getswitchports
 - Return a switch port
+  - getswitchportdetail
 - Update a switch port
+  - updateswitchport
   
 ## [Switch profiles](https://dashboard.meraki.com/api_docs#switch-profiles)
 
@@ -391,10 +467,15 @@
 ## [VLANs](https://dashboard.meraki.com/api_docs#vlans)
 
 - List the VLANs for an MX network
+  - getvlans
 - Return a VLAN
+  - getvlandetail
 - Update a VLAN
+  - updatevlan
 - Add a VLAN
+  - addvlan
 - Delete a VLAN from a network
+  - delvlan
 - Returns the enabled status of VLANs for the network
 - Enable/Disable VLANs for the given network
   
