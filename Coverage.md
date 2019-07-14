@@ -3,7 +3,7 @@
 ## [API Usage](https://dashboard.meraki.com/api_docs#api-usage)
 
 - List the API requests made by an organization
-  - GET: *Not implemented*
+  - *Not implemented*
 
 ## [Action batches](https://dashboard.meraki.com/api_docs#action-batches)
 
@@ -16,9 +16,13 @@
 ## [Admins](https://dashboard.meraki.com/api_docs#admins)
 
 - List the dashboard administrators in this organization
+  - getorgadmins
 - Create a new dashboard administrator
+  - addadmin
 - Update an administrator
+  - updateadmin
 - Revoke all access for a dashboard administrator within this organization
+  - deladmin
   
 ## [Alert settings](https://dashboard.meraki.com/api_docs#alert-settings)
 
