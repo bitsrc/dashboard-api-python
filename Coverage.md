@@ -1,15 +1,11 @@
 # API Coverage
 
-## API Usage
-
-<https://dashboard.meraki.com/api_docs#api-usage>
+## [API Usage](https://dashboard.meraki.com/api_docs#api-usage)
 
 - List the API requests made by an organization
   - GET: *Not implemented*
 
-## Action batches
-
-<https://dashboard.meraki.com/api_docs#action-batches>
+## [Action batches](https://dashboard.meraki.com/api_docs#action-batches)
 
 - Create an action batch
 - Return the list of action batches in the organization
@@ -17,214 +13,108 @@
 - Delete an action batch
 - Update an action batch
 
-## Admins
+## [Admins](https://dashboard.meraki.com/api_docs#admins)
 
-<https://dashboard.meraki.com/api_docs#admins>
+## [Alert settings](https://dashboard.meraki.com/api_docs#alert-settings)
 
-## Alert settings
+## [Bluetooth clients](https://dashboard.meraki.com/api_docs#bluetooth-clients)
 
-<https://dashboard.meraki.com/api_docs#alert-settings>
+## [Cameras](https://dashboard.meraki.com/api_docs#cameras)
 
-## Bluetooth clients
+## [Clients](https://dashboard.meraki.com/api_docs#clients)
 
-<https://dashboard.meraki.com/api_docs#bluetooth-clients>
+## [Config templates](https://dashboard.meraki.com/api_docs#config-templates)
 
-## Cameras
+## [Content filtering categories](https://dashboard.meraki.com/api_docs#content-filtering-categories)
 
-<https://dashboard.meraki.com/api_docs#cameras>
+## [Content filtering rules](https://dashboard.meraki.com/api_docs#content-filtering-rules)
 
-## Clients
+## [Devices](https://dashboard.meraki.com/api_docs#devices)
 
-<https://dashboard.meraki.com/api_docs#clients>
+## [Firewalled services](https://dashboard.meraki.com/api_docs#firewalled-services)
 
-## Config templates
+## [Group policies](https://dashboard.meraki.com/api_docs#group-policies)
 
-<https://dashboard.meraki.com/api_docs#config-templates>
+## [HTTP servers](https://dashboard.meraki.com/api_docs#http-servers)
 
-## Content filtering categories
+## [Intrusion settings](https://dashboard.meraki.com/api_docs#intrusion-settings)
 
-<https://dashboard.meraki.com/api_docs#content-filtering-categories>
+## [MR L3 firewall](https://dashboard.meraki.com/api_docs#mr-l3-firewall)
 
-## Content filtering rules
+## [MV Sense](https://dashboard.meraki.com/api_docs#mv-sense)
 
-<https://dashboard.meraki.com/api_docs#content-filtering-rules>
+## [MX 1:1 NAT rules](https://dashboard.meraki.com/api_docs#mx-1:1-nat-rules)
 
-## Devices
+## [MX 1:Many NAT rules](https://dashboard.meraki.com/api_docs#mx-1:many-nat-rules)
 
-<https://dashboard.meraki.com/api_docs#devices>
+## [MX L3 firewall](https://dashboard.meraki.com/api_docs#mx-l3-firewall)
 
-## Firewalled services
+## [MX L7 application categories](https://dashboard.meraki.com/api_docs#mx-l7-application-categories)
 
-<https://dashboard.meraki.com/api_docs#firewalled-services>
+## [MX L7 firewall](https://dashboard.meraki.com/api_docs#mx-l7-firewall)
 
-## Group policies
+## [MX VPN firewall](https://dashboard.meraki.com/api_docs#mx-vpn-firewall)
 
-<https://dashboard.meraki.com/api_docs#group-policies>
+## [MX cellular firewall](https://dashboard.meraki.com/api_docs#mx-cellular-firewall)
 
-## HTTP servers
+## [MX port forwarding rules](https://dashboard.meraki.com/api_docs#mx-port-forwarding-rules)
 
-<https://dashboard.meraki.com/api_docs#http-servers>
+## [Malware settings](https://dashboard.meraki.com/api_docs#malware-settings)
 
-## Intrusion settings
+## [Management interface settings](https://dashboard.meraki.com/api_docs#management-interface-settings)
 
-<https://dashboard.meraki.com/api_docs#intrusion-settings>
+## [Meraki auth users](https://dashboard.meraki.com/api_docs#meraki-auth-users)
 
-## MR L3 firewall
+## [Named tag scope](https://dashboard.meraki.com/api_docs#named-tag-scope)
 
-<https://dashboard.meraki.com/api_docs#mr-l3-firewall>
+## [NetFlow settings](https://dashboard.meraki.com/api_docs#netflow-settings)
 
-## MV Sense
+## [Networks](https://dashboard.meraki.com/api_docs#networks)
 
-<https://dashboard.meraki.com/api_docs#mv-sense>
+## [OpenAPI Spec](https://dashboard.meraki.com/api_docs#openapi-spec)
 
-## MX 1:1 NAT rules
+## [Organizations](https://dashboard.meraki.com/api_docs#organizations)
 
-<https://dashboard.meraki.com/api_docs#mx-1:1-nat-rules>
+## [PII](https://dashboard.meraki.com/api_docs#pii)
 
-## MX 1:Many NAT rules
+## [Radio settings](https://dashboard.meraki.com/api_docs#radio-settings)
 
-<https://dashboard.meraki.com/api_docs#mx-1:many-nat-rules>
+## [SAML roles](https://dashboard.meraki.com/api_docs#saml-roles)
 
-## MX L3 firewall
+## [SM](https://dashboard.meraki.com/api_docs#sm)
 
-<https://dashboard.meraki.com/api_docs#mx-l3-firewall>
+## [SNMP settings](https://dashboard.meraki.com/api_docs#snmp-settings)
 
-## MX L7 application categories
+## [SSIDs](https://dashboard.meraki.com/api_docs#ssids)
 
-<https://dashboard.meraki.com/api_docs#mx-l7-application-categories>
+## [Security events](https://dashboard.meraki.com/api_docs#security-events)
 
-## MX L7 firewall
+## [Splash login attempts](https://dashboard.meraki.com/api_docs#splash-login-attempts)
 
-<https://dashboard.meraki.com/api_docs#mx-l7-firewall>
+## [Splash settings](https://dashboard.meraki.com/api_docs#splash-settings)
 
-## MX VPN firewall
+## [Static routes](https://dashboard.meraki.com/api_docs#static-routes)
 
-<https://dashboard.meraki.com/api_docs#mx-vpn-firewall>
+## [Switch port schedules](https://dashboard.meraki.com/api_docs#switch-port-schedules)
 
-## MX cellular firewall
+## [Switch ports](https://dashboard.meraki.com/api_docs#switch-ports)
 
-<https://dashboard.meraki.com/api_docs#mx-cellular-firewall>
+## [Switch profiles](https://dashboard.meraki.com/api_docs#switch-profiles)
 
-## MX port forwarding rules
+## [Switch settings](https://dashboard.meraki.com/api_docs#switch-settings)
 
-<https://dashboard.meraki.com/api_docs#mx-port-forwarding-rules>
+## [Switch stacks](https://dashboard.meraki.com/api_docs#switch-stacks)
 
-## Malware settings
+## [Syslog servers](https://dashboard.meraki.com/api_docs#syslog-servers)
 
-<https://dashboard.meraki.com/api_docs#malware-settings>
+## [Traffic analysis settings](https://dashboard.meraki.com/api_docs#traffic-analysis-settings)
 
-## Management interface settings
+## [Traffic shaping](https://dashboard.meraki.com/api_docs#traffic-shaping)
 
-<https://dashboard.meraki.com/api_docs#management-interface-settings>
+## [Uplink settings](https://dashboard.meraki.com/api_docs#uplink-settings)
 
-## Meraki auth users
+## [VLANs](https://dashboard.meraki.com/api_docs#vlans)
 
-<https://dashboard.meraki.com/api_docs#meraki-auth-users>
+## [Webhook logs](https://dashboard.meraki.com/api_docs#webhook-logs)
 
-## Named tag scope
-
-<https://dashboard.meraki.com/api_docs#named-tag-scope>
-
-## NetFlow settings
-
-<https://dashboard.meraki.com/api_docs#netflow-settings>
-
-## Networks
-
-<https://dashboard.meraki.com/api_docs#networks>
-
-## OpenAPI Spec
-
-<https://dashboard.meraki.com/api_docs#openapi-spec>
-
-## Organizations
-
-<https://dashboard.meraki.com/api_docs#organizations>
-
-## PII
-
-<https://dashboard.meraki.com/api_docs#pii>
-
-## Radio settings
-
-<https://dashboard.meraki.com/api_docs#radio-settings>
-
-## SAML roles
-
-<https://dashboard.meraki.com/api_docs#saml-roles>
-
-## SM
-
-<https://dashboard.meraki.com/api_docs#sm>
-
-## SNMP settings
-
-<https://dashboard.meraki.com/api_docs#snmp-settings>
-
-## SSIDs
-
-<https://dashboard.meraki.com/api_docs#ssids>
-
-## Security events
-
-<https://dashboard.meraki.com/api_docs#security-events>
-
-## Splash login attempts
-
-<https://dashboard.meraki.com/api_docs#splash-login-attempts>
-
-## Splash settings
-
-<https://dashboard.meraki.com/api_docs#splash-settings>
-
-## Static routes
-
-<https://dashboard.meraki.com/api_docs#static-routes>
-
-## Switch port schedules
-
-<https://dashboard.meraki.com/api_docs#switch-port-schedules>
-
-## Switch ports
-
-<https://dashboard.meraki.com/api_docs#switch-ports>
-
-## Switch profiles
-
-<https://dashboard.meraki.com/api_docs#switch-profiles>
-
-## Switch settings
-
-<https://dashboard.meraki.com/api_docs#switch-settings>
-
-## Switch stacks
-
-<https://dashboard.meraki.com/api_docs#switch-stacks>
-
-## Syslog servers
-
-<https://dashboard.meraki.com/api_docs#syslog-servers>
-
-## Traffic analysis settings
-
-<https://dashboard.meraki.com/api_docs#traffic-analysis-settings>
-
-## Traffic shaping
-
-<https://dashboard.meraki.com/api_docs#traffic-shaping>
-
-## Uplink settings
-
-<https://dashboard.meraki.com/api_docs#uplink-settings>
-
-## VLANs
-
-<https://dashboard.meraki.com/api_docs#vlans>
-
-## Webhook logs
-
-<https://dashboard.meraki.com/api_docs#webhook-logs>
-
-## Wireless health
-
-<https://dashboard.meraki.com/api_docs#wireless-health>
+## [Wireless health](https://dashboard.meraki.com/api_docs#wireless-health)
