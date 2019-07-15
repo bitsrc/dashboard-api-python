@@ -1732,7 +1732,7 @@ def getmxintrusionsettings(apikey, networkid, suppressprint=False):
 # https://dashboard.meraki.com/api_docs#set-the-supported-intrusion-settings-for-an-mx-network
 def updatemxintrusionsettings(apikey, networkid, intrusionsettings, suppressprint=False):
     # intrusionsettings = {
-    # 'mode': 'disabled'/'detection'/prevention',
+    # 'mode': 'disabled'/'detection'/'prevention',
     # 'idsRulesets': 'connectivity'/'balanced'/'security',
     # 'protectedNetworks': {
     #   'useDefault': true/false,
