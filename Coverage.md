@@ -198,7 +198,9 @@
 ## [Malware settings](https://dashboard.meraki.com/api_docs#malware-settings)
 
 - Returns all supported malware settings for an MX network
+  - getmalwaresettings
 - Set the supported malware settings for an MX network
+  - updatemalwaresettings
   
 ## [Management interface settings](https://dashboard.meraki.com/api_docs#management-interface-settings)
 
