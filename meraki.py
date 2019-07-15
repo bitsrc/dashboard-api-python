@@ -1711,6 +1711,50 @@ def getlldpcdp(apikey, networkid, serial, timespan=10800, suppressprint=False):
         dashboard.status_code, dashboard.text, calltype, suppressprint)
     return result
 
+# ### Intrusion settings ###
+
+# Returns all supported intrusion settings for an MX network
+# https://dashboard.meraki.com/api_docs#returns-all-supported-intrusion-settings-for-an-mx-network
+def getmxintrusionsettings(apikey, networkid, suppressprint=False):
+    calltype = 'MX Intrusion Settings'
+    geturl = '{0}/networks/{1}/security/intrusionSettings'.format(
+        str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+    dashboard = requests.get(geturl, headers=headers)
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
+
+# Set the supported intrusion settings for an MX network
+# https://dashboard.meraki.com/api_docs#set-the-supported-intrusion-settings-for-an-mx-network
+def updatemxintrusionsettings(apikey, networkid, intrusionsettings, suppressprint=False):
+    # intrusionsettings = {
+    # 'mode': 'disabled'/'detection'/prevention',
+    # 'idsRulesets': 'connectivity'/'balanced'/'security',
+    # 'protectedNetworks': {
+    #   'useDefault': true/false,
+    #   'includedCidr': ["10.0.0.0/8", "172.16.0.0/12"],
+    #   'excludedCidr': ["10.0.0.0/8", "172.16.0.0/12"]
+    #   }
+    # }
+
+    calltype = 'MX Intrusion Settings'
+    puturl = '{0}/networks/{1}/security/intrusionSettings'.format(
+        str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+
+    putdata = intrusionsettings
+
+    dashboard = requests.put(puturl, data=json.dumps(putdata), headers=headers)
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
 
 # ### MX cellular firewall###
 
