@@ -1756,6 +1756,44 @@ def updatemxintrusionsettings(apikey, networkid, intrusionsettings, suppressprin
         dashboard.status_code, dashboard.text, calltype, suppressprint)
     return result
 
+# Returns all supported intrusion settings for an organization
+# https://dashboard.meraki.com/api_docs#returns-all-supported-intrusion-settings-for-an-organization
+def getorgintrusionsettings(apikey, orgid, suppressprint=False):
+    calltype = 'Organization Intrusion Settings'
+    geturl = '{0}/organizations/{1}/security/intrusionSettings'.format(
+        str(base_url), str(orgid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+    dashboard = requests.get(geturl, headers=headers)
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
+
+# Sets supported intrusion settings for an organization
+# https://dashboard.meraki.com/api_docs#sets-supported-intrusion-settings-for-an-organization
+def updateorgintrusionsettings(apikey, orgid, whitelistedrules, suppressprint=False):
+    # whitelistedrules = [
+    #   {'ruleId': 'meraki:intrusion/snort/GID/01/SID/688', 'message': 'SQL sa login failed'},
+    #   {'ruleId': 'meraki:intrusion/snort/GID/01/SID/5805', 'message': 'MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines'}
+    # ]
+
+    calltype = 'MX Intrusion Settings'
+    puturl = '{0}/networks/{1}/security/intrusionSettings'.format(
+        str(base_url), str(orgid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+
+    putdata = {'whitelistedRules': whitelistedrules}
+
+    dashboard = requests.put(puturl, data=json.dumps(putdata), headers=headers)
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
+
 # ### MX cellular firewall###
 
 # Return the cellular firewall rules for an MX network
