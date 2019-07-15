@@ -70,11 +70,14 @@
 ## [Content filtering categories](https://dashboard.meraki.com/api_docs#content-filtering-categories)
 
 - List all available content filtering categories for an MX network
+  - getcontentcategories
   
 ## [Content filtering rules](https://dashboard.meraki.com/api_docs#content-filtering-rules)
 
 - Return the content filtering settings for an MX network
+  - getcontentfiltering
 - Update the content filtering settings for an MX network
+  - updatecontentfiltering
   
 ## [Devices](https://dashboard.meraki.com/api_docs#devices)
 
