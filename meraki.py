@@ -1531,7 +1531,7 @@ def getcontentcategories(apikey, networkid, suppressprint=False):
 
     Args:
         apikey: User's Meraki API Key
-        networkid: ID of target network to list intrusion settings from
+        networkid: ID of target network to list content filtering categories from
         suppressprint: True to disable result output, false to enable
 
     Returns:
@@ -1561,6 +1561,123 @@ def getcontentcategories(apikey, networkid, suppressprint=False):
     }
     dashboard = requests.get(geturl, headers=headers)
 
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
+
+# ### Content Filtering Rules ###
+
+# Return the content filtering settings for an MX network
+# https://api.meraki.com/api_docs#return-the-content-filtering-settings-for-an-mx-network
+def getcontentfiltering(apikey, networkid, suppressprint=False):
+    """Return the content filtering settings for an MX network
+
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to list content filtering rules from
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "allowedUrlPatterns": [
+                "http://www.example.org",
+                "http://help.com.au"
+            ],
+            "blockedUrlPatterns": [
+                "http://www.example.com",
+                "http://www.betting.com"
+            ],
+            "blockedUrlCategories": [
+                {
+                    "id": "meraki:contentFiltering/category/1",
+                    "name": "Real Estate"
+                },
+                {
+                    "id": "meraki:contentFiltering/category/7",
+                    "name": "Shopping"
+                }
+            ],
+            "urlCategoryListSize": "topSites"
+        }
+    """
+    calltype = 'Content Filtering Rules'
+    geturl = '{0}/networks/{1}/contentFiltering'.format(str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+    dashboard = requests.get(geturl, headers=headers)
+
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
+
+# Update the content filtering settings for an MX network
+# https://api.meraki.com/api_docs#update-the-content-filtering-settings-for-an-mx-network
+def updatecontentfiltering(apikey, networkid, contentfilteringsettings, suppressprint=False):
+    """Update the content filtering settings for an MX network
+
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to list content filtering rules from
+        contentfilteringsettings:
+            {
+                "allowedUrlPatterns": [
+                    "http://www.example.org",
+                    "http://help.com.au"
+                ],
+                "blockedUrlPatterns": [
+                    "http://www.example.com",
+                    "http://www.betting.com"
+                ],
+                "blockedUrlCategories": [
+                    {
+                        "id": "meraki:contentFiltering/category/1",
+                        "name": "Real Estate"
+                    },
+                    {
+                        "id": "meraki:contentFiltering/category/7",
+                        "name": "Shopping"
+                    }
+                ],
+                "urlCategoryListSize": "topSites"/"fullList"
+            }
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "allowedUrlPatterns": [
+                "http://www.example.org",
+                "http://help.com.au"
+            ],
+            "blockedUrlPatterns": [
+                "http://www.example.com",
+                "http://www.betting.com"
+            ],
+            "blockedUrlCategories": [
+                {
+                    "id": "meraki:contentFiltering/category/1",
+                    "name": "Real Estate"
+                },
+                {
+                    "id": "meraki:contentFiltering/category/7",
+                    "name": "Shopping"
+                }
+            ],
+            "urlCategoryListSize": "topSites"
+        }
+    """
+    calltype = 'Content Filtering Rules'
+    puturl = '{0}/networks/{1}/contentFiltering'.format(
+        str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+
+    putdata = contentfilteringsettings
+
+    dashboard = requests.put(puturl, data=json.dumps(putdata), headers=headers)
     result = __returnhandler(
         dashboard.status_code, dashboard.text, calltype, suppressprint)
     return result
