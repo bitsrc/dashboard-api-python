@@ -1716,6 +1716,24 @@ def getlldpcdp(apikey, networkid, serial, timespan=10800, suppressprint=False):
 # Returns all supported intrusion settings for an MX network
 # https://dashboard.meraki.com/api_docs#returns-all-supported-intrusion-settings-for-an-mx-network
 def getmxintrusionsettings(apikey, networkid, suppressprint=False):
+    """Returns all supported intrusion settings for an MX network
+
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to list intrusion settings from
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "mode": "prevention",
+            "idsRulesets": "balanced",
+            "protectedNetworks": {
+                "useDefault": false,
+                "includedCidr": ["10.0.0.0/8", "127.0.0.0/8"],
+                "excludedCidr": ["10.0.0.0/8", "127.0.0.0/8"]
+            }
+        }
+    """
     calltype = 'MX Intrusion Settings'
     geturl = '{0}/networks/{1}/security/intrusionSettings'.format(
         str(base_url), str(networkid))
@@ -1731,16 +1749,33 @@ def getmxintrusionsettings(apikey, networkid, suppressprint=False):
 # Set the supported intrusion settings for an MX network
 # https://dashboard.meraki.com/api_docs#set-the-supported-intrusion-settings-for-an-mx-network
 def updatemxintrusionsettings(apikey, networkid, intrusionsettings, suppressprint=False):
-    # intrusionsettings = {
-    # 'mode': 'disabled'/'detection'/'prevention',
-    # 'idsRulesets': 'connectivity'/'balanced'/'security',
-    # 'protectedNetworks': {
-    #   'useDefault': true/false,
-    #   'includedCidr': ["10.0.0.0/8", "172.16.0.0/12"],
-    #   'excludedCidr': ["10.0.0.0/8", "172.16.0.0/12"]
-    #   }
-    # }
+    """Set the supported intrusion settings for an MX network
 
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to update intrusion settings on
+        intrusionsettings: {
+            'mode': 'disabled'/'detection'/'prevention',
+            'idsRulesets': 'connectivity'/'balanced'/'security',
+            'protectedNetworks': {
+                'useDefault': true/false,
+                'includedCidr': ["10.0.0.0/8", "172.16.0.0/12"],
+                'excludedCidr': ["10.0.0.0/8", "172.16.0.0/12"]
+            }
+        }
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "mode": "prevention",
+            "idsRulesets": "balanced",
+            "protectedNetworks": {
+                "useDefault": false,
+                "includedCidr": ["10.0.0.0/8", "127.0.0.0/8"],
+                "excludedCidr": ["10.0.0.0/8", "127.0.0.0/8"]
+            }
+        }
+    """
     calltype = 'MX Intrusion Settings'
     puturl = '{0}/networks/{1}/security/intrusionSettings'.format(
         str(base_url), str(networkid))
@@ -1759,6 +1794,27 @@ def updatemxintrusionsettings(apikey, networkid, intrusionsettings, suppressprin
 # Returns all supported intrusion settings for an organization
 # https://dashboard.meraki.com/api_docs#returns-all-supported-intrusion-settings-for-an-organization
 def getorgintrusionsettings(apikey, orgid, suppressprint=False):
+    """Returns all supported intrusion settings for an organization
+
+    Args:
+        apikey: User's Meraki API Key
+        orgid: ID of target organization to list intrusion settings from
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "whitelistedRules": [
+                {
+                    "ruleId": "meraki:intrusion/snort/GID/01/SID/688",
+                    "message": "SQL sa login failed"
+                },
+                {
+                    "ruleId": "meraki:intrusion/snort/GID/01/SID/5805",
+                    "message": "MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines"
+                }
+            ]
+        }
+    """
     calltype = 'Organization Intrusion Settings'
     geturl = '{0}/organizations/{1}/security/intrusionSettings'.format(
         str(base_url), str(orgid))
@@ -1774,11 +1830,31 @@ def getorgintrusionsettings(apikey, orgid, suppressprint=False):
 # Sets supported intrusion settings for an organization
 # https://dashboard.meraki.com/api_docs#sets-supported-intrusion-settings-for-an-organization
 def updateorgintrusionsettings(apikey, orgid, whitelistedrules, suppressprint=False):
-    # whitelistedrules = [
-    #   {'ruleId': 'meraki:intrusion/snort/GID/01/SID/688', 'message': 'SQL sa login failed'},
-    #   {'ruleId': 'meraki:intrusion/snort/GID/01/SID/5805', 'message': 'MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines'}
-    # ]
+    """Set the supported intrusion settings for an organization
 
+    Args:
+        apikey: User's Meraki API Key
+        orgid: ID of target organization to update intrusion settings on
+        whitelistedrules: [
+            {'ruleId': 'meraki:intrusion/snort/GID/01/SID/688', 'message': 'SQL sa login failed'},
+            {'ruleId': 'meraki:intrusion/snort/GID/01/SID/5805', 'message': 'MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines'}
+        ]
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "whitelistedRules": [
+                {
+                    "ruleId": "meraki:intrusion/snort/GID/01/SID/688",
+                    "message": "SQL sa login failed"
+                },
+                {
+                    "ruleId": "meraki:intrusion/snort/GID/01/SID/5805",
+                    "message": "MALWARE-OTHER Trackware myway speedbar runtime detection - switch engines"
+                }
+            ]
+        }
+    """
     calltype = 'MX Intrusion Settings'
     puturl = '{0}/networks/{1}/security/intrusionSettings'.format(
         str(base_url), str(orgid))
