@@ -2060,6 +2060,97 @@ def updatessidl3fwrules(apikey, networkid, ssidnum, fwrules,
         dashboard.status_code, dashboard.text, calltype, suppressprint)
     return result
 
+# ### Malware Settings ###
+
+# Returns all supported malware settings for an MX network
+# https://api.meraki.com/api_docs#returns-all-supported-malware-settings-for-an-mx-network
+def getmalwaresettings(apikey, networkid, suppressprint=False):
+    """Returns all supported malware settings for an MX network
+
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to list intrusion settings from
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "mode": "enabled",
+            "allowedUrls": [
+                { "url": "example.org", "comment": "allow example.org" },
+                { "url": "help.com.au", "comment": "allow help.com.au" }
+            ],
+            "allowedFiles": [
+                {
+                "sha256": "e82c5f7d75004727e1f3b94426b9a11c8bc4c312a9170ac9a73abace40aef503",
+                "comment": "allow ZIP file"
+                }
+            ]
+        }
+    """
+    calltype = 'Malware Settings'
+    geturl = '{0}/networks/{1}/security/malwareSettings'.format(
+        str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+    dashboard = requests.get(geturl, headers=headers)
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
+
+# Set the supported malware settings for an MX network
+# https://api.meraki.com/api_docs#set-the-supported-malware-settings-for-an-mx-network
+def updatemalwaresettings(apikey, networkid, malwaresettings, suppressprint=False):
+    """Set the supported malware settings for an MX network
+
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to update malware settings on
+        malwaresettings: {
+            'mode': 'disabled'/'enabled',
+            'allowedUrls': [
+                {'url': 'example.org', 'comment': 'Allow example.org'},
+                {'url': 'help.com.au', 'comment': 'Allow help.com.au'}
+            ]
+            'allowedFiles': [
+                {
+                    "sha256":"e82c5f7d75004727e1f3b94426b9a11c8bc4c312a9170ac9a73abace40aef503",
+                    "comment":"allow ZIP file" 
+                }
+            ]
+        }
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "mode": "enabled",
+            "allowedUrls": [
+                { "url": "example.org", "comment": "allow example.org" },
+                { "url": "help.com.au", "comment": "allow help.com.au" }
+            ],
+            "allowedFiles": [
+                {
+                "sha256": "e82c5f7d75004727e1f3b94426b9a11c8bc4c312a9170ac9a73abace40aef503",
+                "comment": "allow ZIP file"
+                }
+            ]
+        }
+    """
+    calltype = 'Malware Settings'
+    puturl = '{0}/networks/{1}/security/malwareSettings'.format(
+        str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+
+    putdata = malwaresettings
+
+    dashboard = requests.put(puturl, data=json.dumps(putdata), headers=headers)
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
 
 # ### GROUP POLICIES ###
 
