@@ -12,9 +12,9 @@ Also available via [PIP](https://pypi.python.org/pypi/meraki/).
   * Use pip (or alternative such as easy_install) to install required packages:
     * pip install requests meraki
 * You are now ready to create your first script:
-  * create a new file and name it with python extension, e.g., meraki_hello_world.py
-  * import the meraki api into your script, e.g.,  from meraki import meraki
-  * use the meraki API to interact with your dashboard
+  * Create a new file and name it with python extension, e.g.,  meraki_hello_world.py
+  * Import the Meraki API into your script, e.g.,  from meraki import meraki
+  * Use the Meraki API to interact with your Dashboard
   
 ## Example
 
