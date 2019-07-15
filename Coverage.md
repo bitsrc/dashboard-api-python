@@ -127,9 +127,13 @@
 ## [Intrusion settings](https://dashboard.meraki.com/api_docs#intrusion-settings)
 
 - Returns all supported intrusion settings for an MX network
+  - getmxintrusionsettings
 - Set the supported intrusion settings for an MX network
+  - updatemxintrusionsettings
 - Returns all supported intrusion settings for an organization
+  - getorgintrusionsettings
 - Sets supported intrusion settings for an organization
+  - updateorgintrusionsettings
   
 ## [MR L3 firewall](https://dashboard.meraki.com/api_docs#mr-l3-firewall)
 
