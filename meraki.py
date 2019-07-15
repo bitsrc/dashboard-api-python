@@ -1522,6 +1522,48 @@ def deltemplate(apikey, orgid, templateid, suppressprint=False):
         dashboard.status_code, dashboard.text, calltype, suppressprint)
     return result
 
+# ### Content Filtering Categories ###
+
+# List all available content filtering categories for an MX network
+# https://api.meraki.com/api_docs#list-all-available-content-filtering-categories-for-an-mx-network
+def getcontentcategories(apikey, networkid, suppressprint=False):
+    """List all available content filtering categories for an MX network
+
+    Args:
+        apikey: User's Meraki API Key
+        networkid: ID of target network to list intrusion settings from
+        suppressprint: True to disable result output, false to enable
+
+    Returns:
+        {
+            "categories": [
+                {
+                    "id": "meraki:contentFiltering/category/1",
+                    "name": "Real Estate"
+                },
+                {
+                    "id": "meraki:contentFiltering/category/3",
+                    "name": "Financial Services"
+                },
+                "...",
+                {
+                    "id": "meraki:contentFiltering/category/11",
+                    "name": "Adult and Pornography"
+                }
+            ]
+            }
+    """
+    calltype = 'Content Filtering Categories'
+    geturl = '{0}/networks/{1}/contentFiltering/categories'.format(str(base_url), str(networkid))
+    headers = {
+        'x-cisco-meraki-api-key': format(str(apikey)),
+        'Content-Type': 'application/json'
+    }
+    dashboard = requests.get(geturl, headers=headers)
+
+    result = __returnhandler(
+        dashboard.status_code, dashboard.text, calltype, suppressprint)
+    return result
 
 # ### DEVICES ###
 # List the devices in a network
